@@ -1,3 +1,9 @@
+call plug#begin()
+Plug 'sainnhe/sonokai'
+call plug#end()
+
+
+
 " Global Sets """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on            " Enable syntax highlight
 set nu               " Enable line numbers
@@ -25,4 +31,34 @@ set autoread         " Update vim after file update from outside
 set mouse=a          " Enable mouse support
 filetype on          " Detect and set the filetype option and trigger the FileType Event
 filetype plugin on   " Load the plugin file for the file type, if any
-filetype indent on   " Load the indent file for the file type, if any
+filetype indent on   " Load the indent file for the file  type, if any
+
+
+
+" Themes """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+let g:sonokai_style = 'atlantis'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 0
+let g:sonokai_diagnostic_line_highlight = 1
+let g:sonokai_current_word = 'bold'
+colorscheme sonokai
+
+
+
+" Remaps """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" remaps aqui
+
+
+
+" autocmd """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" autocmds aqui
+
+
+
+

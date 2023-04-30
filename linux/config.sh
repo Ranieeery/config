@@ -47,7 +47,10 @@ flatpak run com.valvesoftware.Steam
 
 # Instalar OpenJDK 17, Node.js e Yarn
 sudo apt install -y openjdk-17-jdk nodejs npm
+sudo npm install -g n
+sudo n lts
 npm install --global yarn
+
 
 # Instalar Zsh e Oh My Zsh
 sudo apt install zsh -y

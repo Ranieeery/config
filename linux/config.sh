@@ -1,18 +1,19 @@
 #!/bin/bash
 
 # Instalação de dependências
-sudo apt update
+sudo apt update -y
 
 # Configuração do Git
+sudo apt install git -y
 git config --global user.name "Ranieeery"
 git config --global user.email "raniery2003@hotmail.com"
 git config --global init.defaultBranch main
 
 # Instalação do Grub
-sudo apt-get install grub2
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer
-sudo apt-get update
-sudo apt-get install grub-customizer
+sudo apt-get install grub2 -y
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
+sudo apt-get update -y
+sudo apt-get install grub-customizer -y
 sudo update-grub
 
 # Instalar programas externos .deb
@@ -20,27 +21,28 @@ mkdir -p ~/Downloads/Programas
 cd ~/Downloads/Programas
 sudo dpkg -i *.deb
 
-# Instalar o snapd
+# Instalar o snapd e curl
 sudo apt install -y snapd
+sudo apt install -y curl
 
 # Instalar Spotify, Flatpak e Discord via Flatpak
 sudo snap install spotify
-sudo apt install flatpak
+sudo apt install flatpak -y
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.discordapp.Discord
+flatpak install flathub com.discordapp.Discord -y
 
 # Instalar Brave Browser via Flatpak
-flatpak install flathub com.brave.Browser
+flatpak install flathub com.brave.Browser -y
 flatpak run com.brave.Browser
 
 # Instalar Visual Studio Code e IntelliJ IDEA Ultimate via Flatpak
-flatpak install flathub com.visualstudio.code
+flatpak install flathub com.visualstudio.code -y
 flatpak run com.visualstudio.code
-flatpak install flathub com.jetbrains.IntelliJ-IDEA-Ultimate
+flatpak install flathub com.jetbrains.IntelliJ-IDEA-Ultimate -y
 flatpak run com.jetbrains.IntelliJ-IDEA-Ultimate
 
 # Instalar Steam via Flatpak
-flatpak install flathub com.valvesoftware.Steam
+flatpak install flathub com.valvesoftware.Steam -y
 flatpak run com.valvesoftware.Steam
 
 # Instalar OpenJDK 17, Node.js e Yarn
@@ -48,11 +50,12 @@ sudo apt install -y openjdk-17-jdk nodejs npm
 npm install --global yarn
 
 # Instalar Zsh e Oh My Zsh
-sudo apt install zsh
+sudo apt install zsh -y
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 echo 'Set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc, and source ~/.zshrc'
+chsh -s $(which zsh)
 
 # Continuação Grub
 echo "sudo nano /etc/default/grub and set GRUB_DISABLE_OS_PROBER=false"

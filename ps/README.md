@@ -11,7 +11,13 @@ notepad $PROFILE
 ```
 Inside $PROFILE:
 
-[PowerShell config](https://github.com/Ranieeery/config/blob/main/ps/Microsoft.PowerShell_profile.ps1)
+[PowerShell config](https://github.com/Ranieeery/config/blob/main/ps/Microsoft.PowerShell_profile.ps1)  
+
+or
+```ps1
+oh-my-posh init pwsh | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/bubblesline.omp.json" | Invoke-Expression
+```
 
 In terminal:
 ```ps1

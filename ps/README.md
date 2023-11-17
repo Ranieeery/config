@@ -25,7 +25,7 @@ In terminal:
 ```
 ----------
 
-If script erron, open with adm perm and paste
+If script error, open with adm perm and paste
 ```ps1
 Set-ExecutionPolicy RemoteSigned
 ```

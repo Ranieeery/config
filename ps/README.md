@@ -23,3 +23,14 @@ In terminal:
 ```ps1
 . $PROFILE
 ```
+----------
+
+If script erron, open with adm perm and paste
+```ps1
+Set-ExecutionPolicy RemoteSigned
+```
+
+If error continues, paste
+```ps1
+Install-Module -Name PSReadLine -Force
+```

@@ -1,3 +1,5 @@
+winget install --id Git.Git -e --source winget
+
 git config --global user.name "Ranieeery"
 git config --global user.email "raniery2003@hotmail.com"
 git config --global init.defaultBranch main
